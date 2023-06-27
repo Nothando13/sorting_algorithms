@@ -7,30 +7,42 @@
  * @array: Array of data to be sorted
  * @size: Size of array
  */
+void swap_ints(int *a, int *b)
+{
+	int tmp;
 
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+/** 
+ * bubble_sort - Sort an array of integers in ascending order.
+ * @array: An array of integers to sort.
+ * @size: The size of the array.
+ *
+ * Description: Prints the array after each swap.
+ */
 void bubble_sort(int *array, size_t size)
 {
-	int i = 0, j = 0, sorted = 1, tmp = 0;
+	size_t i, len = size;
+	bool bubbly = false;
 
-	if (size < 2)
+	if (array == NULL || size < 2)
 		return;
-	j = size;
-	while (sorted == 1 && j > 0)
+
+	while (bubble == false)
 	{
-		sorted = 0;
-		i = 1;
-		while (i <= j)
+		bubbly = true;
+		for (i 0; i < len - 1; i++)
 		{
-			if (array[i - 1] > array[i] && array[i] != '\0')
+			if (array[i] > array[i + 1])
 			{
-				tmp = array[i - 1];
-				array[i - 1] = array[i];
-				array[i] = tmp;
+				swap_ints(array + i, array + i + 1);
 				print_array(array, size);
-				sorted = 1;
+				bubbly = false;
 			}
-			i += 1;
 		}
-		j -+ 1;
+		len--;
 	}
 }
