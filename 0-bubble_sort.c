@@ -1,48 +1,29 @@
 #include "sort.h"
+
 /**
- * bubble_sort - Used to sort a given of n elements
- * provideed in form of an array with n number of elements.
- * Bubble Sort compares all the element one by one and sort
- * them based on their values.
- * @array: Array of data to be sorted
- * @size: Size of array
- */
-void swap_ints(int *a, int *b)
-{
-	int tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-/** 
- * bubble_sort - Sort an array of integers in ascending order.
- * @array: An array of integers to sort.
- * @size: The size of the array.
- *
- * Description: Prints the array after each swap.
- */
+  * bubble_sort - A function for bubble sorting.
+  * @array: The array to sort.
+  * @size: THe length of the aaray.
+  * Return: Nothing.
+  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, len = size;
-	bool bubbly = false;
+	size_t i = 0, j = 0;
+	int aux = 0;
 
-	if (array == NULL || size < 2)
+	if (array == NULL || size == 0)
 		return;
-
-	while (bubble == false)
+	for (; i < size - 1; i++)
 	{
-		bubbly = true;
-		for (i 0; i < len - 1; i++)
+		for (j = 0; j < size - i - 1; j++)
 		{
-			if (array[i] > array[i + 1])
+			if (array[j] > array[j + 1])
 			{
-				swap_ints(array + i, array + i + 1);
+				aux = array[j + 1];
+				array[j + 1] = array[j];
+				array[j] = aux;
 				print_array(array, size);
-				bubbly = false;
 			}
 		}
-		len--;
 	}
 }
