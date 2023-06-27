@@ -71,4 +71,3 @@ void quick_s(int *array, int lo, int hi, size_t size)
 		quick_s(array, pivot + 1, hi, size);
 	}
 }
-
