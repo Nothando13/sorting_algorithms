@@ -32,20 +32,3 @@ Worst Case Time Complexity: O(n^2) Worst case occurs whenever array is reversed
 Best Case Time Complexity: O(n) Best case occurs when array is sorted
 Average Time Complexity : O(n^2)
 Space Complexity: O(1)
-
-Insertion Sort
-GIF
-
-
-Selection Sort
-
-
-
-Quick Sort
-GIF
-
-
-Merge Sort
-GIF
-
-
